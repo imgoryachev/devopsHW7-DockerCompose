@@ -1,4 +1,6 @@
 FROM maven:3.8.6-openjdk-18
+ENV TZ=Asia/Tbilisi
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN microdnf install findutils git
 #RUN apt-get update
 #RUN apt-get install git -y
