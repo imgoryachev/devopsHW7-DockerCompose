@@ -1,5 +1,5 @@
 FROM maven:3.8-eclipse-temurin-11-alpine
-RUN apt-get update && apt-get install git
+RUN apk update && apk install git
 WORKDIR /home/
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR /home/boxfuse-sample-java-war-hello/
