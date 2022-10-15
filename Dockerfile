@@ -1,10 +1,5 @@
-FROM maven:3.8.6-openjdk-18
-ENV TZ=Asia/Tbilisi
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN microdnf install findutils git
-RUN microdnf install tzdata -y
-#RUN apt-get update
-#RUN apt-get install git -y
+FROM maven:latest
+RUN apt-get update && apt-get install git -y
 WORKDIR /home/
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR /home/boxfuse-sample-java-war-hello/
