@@ -8,6 +8,18 @@ services:
         source: warnik
         target: /warnik
       
+  prod:
+    image: tomcat:9.0.67-jre11
+    volumes:
+      - type: volume
+        source: warnik
+        target: /usr/local/tomcat/webapps/
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: host
+        
 volumes:
   warnik:
     
