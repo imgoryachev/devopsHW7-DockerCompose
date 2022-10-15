@@ -4,7 +4,9 @@ services:
   building:
     build: .
     volumes:
-      - warnik:/home/warnik/:ro
+      - type: volume
+        source: warnik
+        target: /warnik
       
 volumes:
   warnik:
