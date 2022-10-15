@@ -1,5 +1,5 @@
 FROM maven:latest
-RUN apt-get update && apt-get install git -y
+RUN apt-get update && apt-get install git default-jdk -y
 WORKDIR /home/
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 WORKDIR /home/boxfuse-sample-java-war-hello/
